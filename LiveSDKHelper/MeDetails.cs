@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using LiveSDKHelper.SkyDrive;
 
 namespace LiveSDKHelper
 {
@@ -25,22 +26,22 @@ namespace LiveSDKHelper
         
         public string CameraRollFolder
         {
-            get { return "me/skydrive/camera_roll"; }
+            get { return SkyDriveHelper.GetCameraRollFolder(LiveSdkConstants.MyDetails); }
         }
 
         public string MyDocumentsFolder
         {
-            get { return "me/skydrive/my_documents"; }
+            get { return SkyDriveHelper.GetMyDocumentsFolder(LiveSdkConstants.MyDetails); }
         }
 
         public string MyPhotosFolder
         {
-            get { return "me/skydrive/my_photos"; }
+            get { return SkyDriveHelper.GetMyPhotosFolder(LiveSdkConstants.MyDetails); }
         }
 
         public string PublicDocumentsFolder
         {
-            get { return "me/skydrive/public_documents"; }
+            get { return SkyDriveHelper.GetPublicDocumentsFolder(LiveSdkConstants.MyDetails); }
         }
     }
 }
