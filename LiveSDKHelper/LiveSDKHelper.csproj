@@ -46,8 +46,10 @@
     <Compile Include="Hotmail\Contacts.cs" />
     <Compile Include="Hotmail\HotmailConstants.cs" />
     <Compile Include="LiveSDKConstants.cs" />
+    <Compile Include="LiveSDKHelper.cs" />
     <Compile Include="MeDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scope.cs" />
     <Compile Include="SkyDriveHelper.cs" />
     <Compile Include="SkyDrive\Comment.cs" />
     <Compile Include="SkyDrive\Comments.cs" />

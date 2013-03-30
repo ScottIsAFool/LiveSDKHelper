@@ -61,7 +61,7 @@
                 <controls:SignInButton HorizontalAlignment="Left"
                                        VerticalAlignment="Top"
                                        SessionChanged="SignInButton_OnSessionChanged"
-                                       Scopes="wl.basic wl.signin wl.offline_access wl.skydrive_update wl.calendars"
+                                       x:Name="SignInButton"
                                        ClientId="00000000400F0F39" />
                 <TextBlock x:Name="SignedInAs"
                            Style="{StaticResource PhoneTextAccentStyle}"

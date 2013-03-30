@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using LiveSDKHelper;
 using LiveSDKHelper.Hotmail;
 using Microsoft.Live;
@@ -16,13 +17,22 @@ namespace LiveSDKHelperPlayground8
         public MainPage()
         {
             InitializeComponent();
+            //wl.basic wl.signin wl.offline_access wl.skydrive_update wl.calendars
+            SignInButton.Scopes = LiveSDKClientHelper.GetScopesString(new List<Scope>
+                                                                          {
+                                                                              Scope.Basic,
+                                                                              Scope.SignIn,
+                                                                              Scope.OfflineAccess,
+                                                                              Scope.SkyDriveUpdate,
+                                                                              Scope.Calendars
+                                                                          });
 
             SignedInAs.Text = "Not signed in";
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
-        
+
         private async void SignInButton_OnSessionChanged(object sender, LiveConnectSessionChangedEventArgs e)
         {
             if (e.Error == null && e.Status == LiveConnectSessionStatus.Connected)
