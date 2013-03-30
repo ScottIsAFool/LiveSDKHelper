@@ -14,5 +14,6 @@
         public const string GetRecentDocs = "recent_docs";
         public const string GetStorageQuota = "quote";
         public const string GetItemPreview = "get_item_preview";
+        public const string GetSharedReadLink = "shared_read_link";
     }
 }
