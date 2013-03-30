@@ -204,12 +204,12 @@ namespace LiveSDKHelper
 
             if (limit.HasValue)
             {
-                uri.SetQueryParam(SkyDriveConstants.Limit, limit.Value.ToString());
+                uri.SetQueryParam(LiveSdkConstants.Limit, limit.Value.ToString());
             }
 
             if (offset.HasValue)
             {
-                uri.SetQueryParam(SkyDriveConstants.Offset, offset.Value.ToString());
+                uri.SetQueryParam(LiveSdkConstants.Offset, offset.Value.ToString());
             }
 
             if (sortBy.HasValue)
@@ -224,80 +224,6 @@ namespace LiveSDKHelper
 
             return uri.Query;
         }
-        
-        private static UriBuilder SetQueryParam(this UriBuilder uri, string key, string value)
-        {
-            var collection = uri.ParseQuery();
-
-            // add (or replace existing) key-value pair
-            collection[key] = value;
-
-            var query = collection
-                .ToConcatenatedString(pair =>
-                                      pair.Key == null
-                                          ? pair.Value
-                                          : pair.Key + "=" + pair.Value, "&");
-
-            uri.Query = query;
-
-            return uri;
-        }
-
-        private static IEnumerable<KeyValuePair<string, string>> GetQueryParams(
-            this UriBuilder uri)
-        {
-            return uri.ParseQuery();
-        }
-
-        private static Dictionary<string, string> ParseQuery(this UriBuilder uri)
-        {
-            var nameValueCollection = new Dictionary<string, string>();
-            string[] items = uri.Query.Split('&');
-
-            foreach (string item in items)
-            {
-                if (item.Contains("="))
-                {
-                    string[] nameValue = item.Split('=');
-                    if (nameValue[0].Contains("?"))
-                        nameValue[0] = nameValue[0].Replace("?", "");
-                    nameValueCollection.Add(nameValue[0], (nameValue[1]));
-                }
-            }
-
-            return nameValueCollection;
-        }
-
-        private static string ToConcatenatedString<T>(this IEnumerable<T> source,
-        Func<T, string> stringSelector)
-        {
-            return source.ToConcatenatedString(stringSelector, String.Empty);
-        }
-
-        /// <summary>
-        /// Creates a string from the sequence by concatenating the result
-        /// of the specified string selector function for each element.
-        /// </summary>
-        ///<param name="separator">The string which separates each concatenated item.</param>
-        private static string ToConcatenatedString<T>(this IEnumerable<T> source,
-            Func<T, string> stringSelector,
-            string separator)
-        {
-            var b = new StringBuilder();
-            bool needsSeparator = false; // don't use for first item
-
-            foreach (var item in source)
-            {
-                if (needsSeparator)
-                    b.Append(separator);
-
-                b.Append(stringSelector(item));
-                needsSeparator = true;
-            }
-
-            return b.ToString();
-        }
-
         #endregion
     }
 }

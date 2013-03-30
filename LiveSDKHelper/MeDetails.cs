@@ -47,5 +47,25 @@ namespace LiveSDKHelper
         {
             get { return SkyDriveHelper.GetSkyDriveTopLevelFolder(LiveSdkConstants.MyDetails); }
         }
+
+        public static string MyContacts
+        {
+            get { return HotmailHelper.GetContacts(LiveSdkConstants.MyDetails); }
+        }
+
+        public static string MyFriends
+        {
+            get { return HotmailHelper.GetFriends(LiveSdkConstants.MyDetails); }
+        }
+
+        public static string MyCalendars
+        {
+            get { return HotmailHelper.GetCalendars(LiveSdkConstants.MyDetails); }
+        }
+
+        public static string MyEvents
+        {
+            get { return HotmailHelper.GetEvents(LiveSdkConstants.MyDetails); }
+        }
     }
 }

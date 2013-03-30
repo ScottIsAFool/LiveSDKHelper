@@ -17,8 +17,6 @@
         public const string GetFiles = "files";
         public const string GetFileContent = "content";
         public const string Filters = "filters";
-        public const string Limit = "limit";
-        public const string Offset = "offset";
         public const string SortBy = "sort_by";
         public const string SortOrder = "sort_order";
         public const string GetComments = "comments";

@@ -38,6 +38,10 @@
     <None Include="LiveSDKHelper.nuspec" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="HotmailHelper.cs" />
+    <Compile Include="Hotmail\Contact.cs" />
+    <Compile Include="Hotmail\HotmailConstants.cs" />
     <Compile Include="LiveSDKConstants.cs" />
     <Compile Include="MeDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
