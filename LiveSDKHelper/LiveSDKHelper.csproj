@@ -41,12 +41,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkyDriveHelper.cs" />
     <Compile Include="SkyDrive\FolderDetails.cs" />
+    <Compile Include="SkyDrive\FolderFilter.cs" />
     <Compile Include="SkyDrive\ItemDetails.cs" />
     <Compile Include="SkyDrive\ItemType.cs" />
     <Compile Include="SkyDrive\MyQuota.cs" />
     <Compile Include="SkyDrive\PreviewType.cs" />
     <Compile Include="SkyDrive\SharedWith.cs" />
     <Compile Include="SkyDrive\SkyDriveConstants.cs" />
+    <Compile Include="SkyDrive\SortBy.cs" />
+    <Compile Include="SkyDrive\SortOrder.cs" />
     <Compile Include="SkyDrive\User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

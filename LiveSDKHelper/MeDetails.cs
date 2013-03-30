@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using LiveSDKHelper.SkyDrive;
 
 namespace LiveSDKHelper
 {
@@ -24,24 +23,29 @@ namespace LiveSDKHelper
         [DataMember(Name = "updated_time")]
         public DateTime UpdatedTime { get; set; }
         
-        public string CameraRollFolder
+        public static string CameraRollFolder
         {
             get { return SkyDriveHelper.GetCameraRollFolder(LiveSdkConstants.MyDetails); }
         }
 
-        public string MyDocumentsFolder
+        public static string MyDocumentsFolder
         {
             get { return SkyDriveHelper.GetMyDocumentsFolder(LiveSdkConstants.MyDetails); }
         }
 
-        public string MyPhotosFolder
+        public static string MyPhotosFolder
         {
             get { return SkyDriveHelper.GetMyPhotosFolder(LiveSdkConstants.MyDetails); }
         }
 
-        public string PublicDocumentsFolder
+        public static string PublicDocumentsFolder
         {
             get { return SkyDriveHelper.GetPublicDocumentsFolder(LiveSdkConstants.MyDetails); }
+        }
+
+        public static string TopLevelSkyDriveFolder
+        {
+            get { return SkyDriveHelper.GetSkyDriveTopLevelFolder(LiveSdkConstants.MyDetails); }
         }
     }
 }
