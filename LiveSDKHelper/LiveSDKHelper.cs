@@ -19,7 +19,7 @@ namespace LiveSDKHelper
             return sb.ToString().Trim();
         }
 
-        public static string ToScope(this Scope scope)
+        internal static string ToScope(this Scope scope)
         {
             switch (scope)
             {
