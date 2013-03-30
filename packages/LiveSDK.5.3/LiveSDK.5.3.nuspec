@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>LiveSDK</id>
+    <version>5.3</version>
+    <title>Live SDK</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <licenseUrl>http://msdn.microsoft.com/en-us/library/bb226715.aspx</licenseUrl>
+    <projectUrl>http://dev.live.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The Live SDK provides a set of controls and APIs that enable applications to integrate
+        using Microsoft Account and to access data in SkyDrive, Hotmail, and Messenger.</description>
+    <releaseNotes />
+    <copyright>Copyright 2012 Microsoft</copyright>
+    <language />
+    <tags>MicrosoftAccount LiveSDK SkyDrive Hotmail Messenger LiveID WindowsLiveID WindowsPhone Metro XAML HTML</tags>
+    <references>
+      <reference file="Microsoft.Live.dll" />
+      <reference file="_._" />
+      <reference file="Microsoft.Live.Controls.dll" />
+    </references>
+  </metadata>
+</package>
