@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LiveSDKHelper
@@ -17,6 +18,21 @@ namespace LiveSDKHelper
             }
 
             return sb.ToString().Trim();
+        }
+
+        public static List<string> GetScopesStringList(List<Scope> scopes)
+        {
+            var result = new List<string>();
+
+            if (scopes == null)
+            {
+                result.Add("invalid list of scopes");
+                return result;
+            }
+
+            result.AddRange(scopes.Select(scope => scope.ToScope()));
+
+            return result;
         }
 
         internal static string ToScope(this Scope scope)

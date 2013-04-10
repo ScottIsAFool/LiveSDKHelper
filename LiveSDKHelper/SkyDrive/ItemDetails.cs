@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace LiveSDKHelper.SkyDrive
@@ -40,5 +41,33 @@ namespace LiveSDKHelper.SkyDrive
         public DateTime UpdatedTime { get; set; }
         [DataMember(Name = "source")]
         public string Source { get; set; }
+        [DataMember(Name = "tags_count")]
+        public int? TagsCount { get; set; }
+        [DataMember(Name = "tags_enabled")]
+        public bool? TagsEnabled { get; set; }
+        [DataMember(Name = "picture")]
+        public string Picture { get; set; }
+        [DataMember(Name = "images")]
+        public List<Image> Images { get; set; }
+        [DataMember(Name = "when_taken")]
+        public DateTime? WhenTaken { get; set; }
+        [DataMember(Name = "height")]
+        public int? Height { get; set; }
+        [DataMember(Name = "width")]
+        public int? Width { get; set; }
+        [DataMember(Name = "location")]
+        public object Location { get; set; }
+        [DataMember(Name = "camera_make")]
+        public object CameraMake { get; set; }
+        [DataMember(Name = "camera_model")]
+        public object CameraModel { get; set; }
+        [DataMember(Name = "focal_ratio")]
+        public int? FocalRatio { get; set; }
+        [DataMember(Name = "focal_length")]
+        public int? FocalLength { get; set; }
+        [DataMember(Name = "exposure_numerator")]
+        public int? ExposureNumerator { get; set; }
+        [DataMember(Name = "exposure_denominator")]
+        public int? ExposureDenominator { get; set; }
     }
 }

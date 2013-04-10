@@ -10,6 +10,8 @@ namespace LiveSDKHelper.SkyDrive
         [DataMember(Name = "folder")]
         Folder,
         [DataMember(Name = "file")]
-        File
+        File,
+        [DataMember(Name= "photo")]
+        Photo
     }
 }

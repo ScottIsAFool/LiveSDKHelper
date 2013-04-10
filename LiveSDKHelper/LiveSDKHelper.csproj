@@ -55,6 +55,8 @@
     <Compile Include="SkyDrive\Comments.cs" />
     <Compile Include="SkyDrive\FolderDetails.cs" />
     <Compile Include="SkyDrive\FolderFilter.cs" />
+    <Compile Include="SkyDrive\Image.cs" />
+    <Compile Include="SkyDrive\ImageType.cs" />
     <Compile Include="SkyDrive\ItemDetails.cs" />
     <Compile Include="SkyDrive\ItemType.cs" />
     <Compile Include="SkyDrive\MyQuota.cs" />
