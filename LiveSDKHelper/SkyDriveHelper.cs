@@ -88,7 +88,7 @@ namespace LiveSDKHelper
                 throw new ArgumentNullException(userId);
             }
 
-            return string.Format(FolderFormat, userId, SkyDriveConstants.GetFiles);
+            return string.Format(FolderFormat, userId, string.Empty);
         }
 
         /// <summary>

@@ -7,6 +7,7 @@
         Videos,
         Audio,
         Folders,
-        Albums
+        Albums,
+        File
     }
 }
