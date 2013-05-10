@@ -69,7 +69,7 @@ namespace LiveSDKHelper
 
         /// <summary>
         /// Gets the events. If a start date is specified and no end date is specified, then the default end time is 30 minutes after the start time. If no start or end time specified,
-        /// it will be events between the current time and 30 days in the future that will be returned. 
+        /// it will be events between the current time and 30 days in the future that will be returned.
         /// </summary>
         /// <param name="id">The id, this can be a user ID or a Calendar ID</param>
         /// <param name="startDate">The start date.</param>

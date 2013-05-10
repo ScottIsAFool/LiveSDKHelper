@@ -17,15 +17,20 @@ namespace LiveSDKHelperPlayground8
         public MainPage()
         {
             InitializeComponent();
+
             //wl.basic wl.signin wl.offline_access wl.skydrive_update wl.calendars
-            SignInButton.Scopes = LiveSDKClientHelper.GetScopesString(new List<Scope>
-                                                                          {
-                                                                              Scope.Basic,
-                                                                              Scope.SignIn,
-                                                                              Scope.OfflineAccess,
-                                                                              Scope.SkyDriveUpdate,
-                                                                              Scope.Calendars
-                                                                          });
+            var scopes = new List<Scope>
+                {
+                    Scope.Basic,
+                    Scope.SignIn,
+                    Scope.OfflineAccess,
+                    Scope.SkyDriveUpdate,
+                    Scope.Calendars
+                };
+
+            SignInButton.Scopes = scopes.ToConcatenatedString(
+                scope => scope.ToStringScope(),
+                " ");
 
             SignedInAs.Text = "Not signed in";
 
@@ -58,7 +63,6 @@ namespace LiveSDKHelperPlayground8
             if (_client == null) return;
 
             var result = await _client.GetAsync(MeDetails.MyContacts);
-
             var contacts = JsonConvert.DeserializeObject<Contacts>(result.RawResult);
 
             MessageBox.Show("You have " + contacts.Items.Count + " contacts!!");
@@ -79,7 +83,6 @@ namespace LiveSDKHelperPlayground8
             if (_client == null) return;
 
             var result = await _client.GetAsync(MeDetails.MyCalendars);
-
             var calendars = JsonConvert.DeserializeObject<Calendars>(result.RawResult);
 
             MessageBox.Show("You have " + calendars.Items.Count + " calendars!!");

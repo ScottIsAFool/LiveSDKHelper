@@ -11,14 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>The Live SDK provides a set of controls and APIs that enable applications to integrate
         using Microsoft Account and to access data in SkyDrive, Hotmail, and Messenger.</description>
-    <releaseNotes />
     <copyright>Copyright 2012 Microsoft</copyright>
-    <language />
     <tags>MicrosoftAccount LiveSDK SkyDrive Hotmail Messenger LiveID WindowsLiveID WindowsPhone Metro XAML HTML</tags>
-    <references>
-      <reference file="Microsoft.Live.dll" />
-      <reference file="_._" />
-      <reference file="Microsoft.Live.Controls.dll" />
-    </references>
   </metadata>
 </package>

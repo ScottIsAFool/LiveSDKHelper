@@ -7,7 +7,7 @@
         public const string CameraRoll = "camera_roll";
         public const string MyPhotos = "my_photos";
         public const string PublicDocuments = "public_documents";
-        
+
         // Folder method calls
         public const string GetFoldersSharedWithMe = "shared";
         public const string GetRecentDocs = "recent_docs";
