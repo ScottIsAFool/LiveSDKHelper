@@ -7,10 +7,13 @@ namespace LiveSDKHelper.SkyDrive
     {
         [DataMember(Name = "album")]
         Album,
+
         [DataMember(Name = "folder")]
         Folder,
+
         [DataMember(Name = "file")]
         File,
+
         [DataMember(Name= "photo")]
         Photo
     }

@@ -7,6 +7,7 @@ namespace LiveSDKHelper.SkyDrive
     {
         [DataMember(Name = "name")]
         public string Name { get; set; }
+
         [DataMember(Name = "id")]
         public string Id { get; set; }
     }

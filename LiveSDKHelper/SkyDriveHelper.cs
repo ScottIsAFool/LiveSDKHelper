@@ -126,7 +126,7 @@ namespace LiveSDKHelper
             }
 
             var query = GetQuery(filters, limit, offset, sortBy, sortOrder);
-            
+
             return string.Format("{0}/{1}{2}", folderId, SkyDriveConstants.GetFiles, query);
         }
 
@@ -145,7 +145,7 @@ namespace LiveSDKHelper
 
             return string.Format("{0}/{1}", fileId, SkyDriveConstants.GetFileContent);
         }
-        
+
         /// <summary>
         /// Gets the preview URL.
         /// </summary>
@@ -175,7 +175,7 @@ namespace LiveSDKHelper
         }
 
         #region Private methods
-        private static string ParseFilters(List<FolderFilter> filters, UriBuilder uri)
+        private static string ParseFilters(List<FolderFilter> filters)
         {
             var filterString = new StringBuilder();
 
@@ -190,7 +190,6 @@ namespace LiveSDKHelper
                 {
                     filterString.Remove(filterString.Length - 1, 1);
                 }
-                uri.SetQueryParam(SkyDriveConstants.Filters, filterString.ToString());
             }
 
             return filterString.ToString();
@@ -200,7 +199,8 @@ namespace LiveSDKHelper
         {
             var uri = new UriBuilder(SkyDriveBaseUrl + SkyDriveConstants.GetFiles);
 
-            ParseFilters(filters, uri);
+            var filterString = ParseFilters(filters);
+            uri.SetQueryParam(SkyDriveConstants.Filters, filterString);
 
             if (limit.HasValue)
             {
