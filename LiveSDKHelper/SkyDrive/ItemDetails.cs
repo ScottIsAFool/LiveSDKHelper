@@ -23,7 +23,7 @@ namespace LiveSDKHelper.SkyDrive
         public string ParentId { get; set; }
 
         [DataMember(Name = "size")]
-        public int Size { get; set; }
+        public long Size { get; set; }
 
         [DataMember(Name = "upload_location")]
         public string UploadLocation { get; set; }

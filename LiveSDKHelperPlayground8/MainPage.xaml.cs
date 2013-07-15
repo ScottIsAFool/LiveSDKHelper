@@ -78,7 +78,7 @@ namespace LiveSDKHelperPlayground8
             MessageBox.Show("You have " + contacts.Items.Count + " friends!!");
         }
 
-        private async void NumberOfCalenars_OnClick(object sender, RoutedEventArgs e)
+        private async void NumberOfCalendars_OnClick(object sender, RoutedEventArgs e)
         {
             if (_client == null) return;
 

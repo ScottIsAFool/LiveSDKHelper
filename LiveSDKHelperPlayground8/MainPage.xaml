@@ -76,7 +76,7 @@
                 </StackPanel>
                 <Button Content="number of calendars?"
                         x:Name="NumberOfCalenars"
-                        Click="NumberOfCalenars_OnClick"/>
+                        Click="NumberOfCalendars_OnClick"/>
             </StackPanel>
         </Grid>
 
