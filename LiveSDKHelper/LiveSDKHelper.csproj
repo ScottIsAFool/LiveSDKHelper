@@ -46,6 +46,8 @@
     <Compile Include="Hotmail\Calendars.cs" />
     <Compile Include="Hotmail\Contact.cs" />
     <Compile Include="Hotmail\Contacts.cs" />
+    <Compile Include="Hotmail\CalendarEvent.cs" />
+    <Compile Include="Hotmail\CalendarEvents.cs" />
     <Compile Include="Hotmail\HotmailConstants.cs" />
     <Compile Include="LiveSDKConstants.cs" />
     <Compile Include="MeDetails.cs" />
