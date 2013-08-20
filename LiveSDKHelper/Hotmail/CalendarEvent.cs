@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-using LiveSDKHelper.SkyDrive;
 using System;
 using System.Runtime.Serialization.Json;
 using System.IO;
@@ -14,9 +13,11 @@ namespace LiveSDKHelper.Hotmail
 
 		public static CalendarEvent FromJson(string json)
 		{
-			DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(CalendarEvent));
-			using(var ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
-				return ser.ReadObject(ms) as CalendarEvent;
+			var ser = new DataContractJsonSerializer(typeof(CalendarEvent));
+		    using (var ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
+		    {
+		        return ser.ReadObject(ms) as CalendarEvent;
+		    }
 		}
 
         [DataMember(Name = "id")]
@@ -36,25 +37,29 @@ namespace LiveSDKHelper.Hotmail
 
 		private DateTime? m_StartTime;
 
-		public DateTime StartTime
-		{
-			get {
-				if (!m_StartTime.HasValue)
-				{
-					if (string.IsNullOrEmpty(StartTimeInternal))
-						return default(DateTime);
-					m_StartTime = DateTime.Parse(StartTimeInternal, CultureInfo.InvariantCulture);
-				}
-				return m_StartTime.Value;
-			}
-			set
-			{
-				m_StartTime = value; 
-				StartTimeInternal = value.ToString(CultureInfo.InvariantCulture);
-			}
-		}
+        public DateTime StartTime
+        {
+            get
+            {
+                if (!m_StartTime.HasValue)
+                {
+                    if (string.IsNullOrEmpty(StartTimeInternal))
+                    {
+                        return default(DateTime);
+                    }
 
-		[DataMember(Name = "end_time")]
+                    m_StartTime = DateTime.Parse(StartTimeInternal, CultureInfo.InvariantCulture);
+                }
+                return m_StartTime.Value;
+            }
+            set
+            {
+                m_StartTime = value;
+                StartTimeInternal = value.ToString(CultureInfo.InvariantCulture);
+            }
+        }
+
+        [DataMember(Name = "end_time")]
 		internal string EndTimeInternal { get; set; }
 
 		private DateTime? m_EndTime;
@@ -65,8 +70,11 @@ namespace LiveSDKHelper.Hotmail
 			{
 				if (!m_EndTime.HasValue)
 				{
-					if (string.IsNullOrEmpty(EndTimeInternal))
-						return default(DateTime);
+				    if (string.IsNullOrEmpty(EndTimeInternal))
+				    {
+				        return default(DateTime);
+				    }
+
 					m_EndTime = DateTime.Parse(EndTimeInternal, CultureInfo.InvariantCulture);
 				}
 				return m_EndTime.Value;
@@ -74,7 +82,7 @@ namespace LiveSDKHelper.Hotmail
 			set
 			{
 				m_EndTime = value;
-				EndTimeInternal = value.ToString(System.Globalization.CultureInfo.InvariantCulture);
+				EndTimeInternal = value.ToString(CultureInfo.InvariantCulture);
 			}
 		}
    }

@@ -12,9 +12,11 @@ namespace LiveSDKHelper.Hotmail
 
 		public static CalendarEvents FromJson(string json)
 		{
-			DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(CalendarEvents));
-			using(var ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
-				return ser.ReadObject(ms) as CalendarEvents;
+			var ser = new DataContractJsonSerializer(typeof(CalendarEvents));
+		    using (var ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
+		    {
+		        return ser.ReadObject(ms) as CalendarEvents;
+		    }
 		}
 
 		[DataMember(Name = "data")]

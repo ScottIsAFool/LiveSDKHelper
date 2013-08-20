@@ -55,6 +55,11 @@ namespace LiveSDKHelper
             get { return SkyDriveHelper.GetSkyDriveTopLevelFolder(LiveSdkConstants.MyDetails); }
         }
 
+        public static string MyFiles
+        {
+            get { return SkyDriveHelper.GetFilesForFolder(LiveSdkConstants.MyDetails); }
+        }
+
         public static string MyContacts
         {
             get { return HotmailHelper.GetContacts(LiveSdkConstants.MyDetails); }
