@@ -1,13 +1,24 @@
 ﻿using System.Runtime.Serialization;
 using LiveSDKHelper.SkyDrive;
+using System.Runtime.Serialization.Json;
+using System.IO;
 
 namespace LiveSDKHelper.Hotmail
 {
     [DataContract]
     public class Calendar
     {
+		public Calendar() { }
+
+		public static Calendar FromJson(string json)
+		{
+			DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Calendar));
+			using(var ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
+				return ser.ReadObject(ms) as Calendar;
+		}
+
         [DataMember(Name = "id")]
-        public string Id { get; set; }
+        public string Id { get; internal set; }
 
         [DataMember(Name = "name")]
         public string Name { get; set; }
