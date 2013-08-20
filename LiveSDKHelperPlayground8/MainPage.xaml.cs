@@ -83,7 +83,8 @@ namespace LiveSDKHelperPlayground8
             if (_client == null) return;
 
             var result = await _client.GetAsync(MeDetails.MyCalendars);
-            var calendars = JsonConvert.DeserializeObject<Calendars>(result.RawResult);
+            var calendars = JsonConvert.DeserializeObject<CalendarEvents>(result.RawResult);
+            // var calendars = CalendarEvents.FromJson(result.RawResult);
 
             MessageBox.Show("You have " + calendars.Items.Count + " calendars!!");
         }
