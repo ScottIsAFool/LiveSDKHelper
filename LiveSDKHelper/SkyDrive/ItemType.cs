@@ -15,6 +15,9 @@ namespace LiveSDKHelper.SkyDrive
         File,
 
         [DataMember(Name= "photo")]
-        Photo
+        Photo,
+
+        [DataMember(Name = "notebook")]
+        Notebook
     }
 }
