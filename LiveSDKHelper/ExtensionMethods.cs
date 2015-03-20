@@ -32,13 +32,6 @@ namespace LiveSDKHelper
             return b.ToString().Trim(separator.ToCharArray());
         }
 
-        public static string ToStringScope(this Scope scope)
-        {
-            var scopeName = scope.GetAttribute<ScopeNameAttribute>();
-
-            return scopeName == null ? string.Empty : scopeName.ScopeName;
-        }
-
         internal static UriBuilder SetQueryParam(this UriBuilder uri, string key, string value)
         {
             var collection = uri.ParseQuery();

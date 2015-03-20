@@ -2,39 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 
 // ReSharper disable CheckNamespace
 namespace LiveSDKHelper.Test.ScopeEnum
 {
-	[TestClass]
-	public class ScopeTest
-	{
-		[TestMethod]
-		public void MustAllHaveScopeNameAttribute()
-		{
-			var scopeValues = Enum.GetValues(typeof(Scope));
-			var scopes = scopeValues.Cast<Scope>().ToList();
+    [TestClass]
+    public class ScopeTest
+    {
+        [TestMethod]
+        public void MustEachHaveUniqueScopeName()
+        {
+            FieldInfo[] fieldinfoArray = typeof(Scope).GetFields(System.Reflection.BindingFlags.Static);
+            List<string> fieldInfoNames = new List<string>();
+            foreach (var fi in fieldinfoArray)
+            {
+                fieldInfoNames.Add(fi.GetRawConstantValue().ToString());
+            }
 
-			var scopesWithName = new List<Scope>(scopes.Where(scope => scope.ToStringScope() != string.Empty));
-
-			Assert.AreEqual(scopes.Count, scopesWithName.Count);
-		}
-
-		[TestMethod]
-		public void MustEachHaveUniqueScopeName()
-		{
-			var scopeValues = Enum.GetValues(typeof(Scope));
-			var scopes = scopeValues.Cast<Scope>().ToList();
-
-			var scopeNames = new List<string>();
-			foreach (var scope in scopes)
-			{
-				if (scopeNames.Contains(scope.ToStringScope())) { continue; }
-
-				scopeNames.Add(scope.ToStringScope());
-			}
-
-			Assert.AreEqual(scopes.Count, scopeNames.Count);
-		}
-	}
+            int scopesCount = fieldinfoArray.Length;
+            int scopesNameCount = fieldInfoNames.Distinct().Count();
+            Assert.AreEqual(scopesCount, scopesNameCount);
+        }
+    }
 }
