@@ -19,7 +19,7 @@ namespace LiveSDKHelperPlayground8
             InitializeComponent();
 
             //wl.basic wl.signin wl.offline_access wl.skydrive_update wl.calendars
-            var scopes = new List<Scope>
+            var scopes = new List<string>
                 {
                     Scope.Basic,
                     Scope.SignIn,
@@ -29,7 +29,7 @@ namespace LiveSDKHelperPlayground8
                 };
 
             SignInButton.Scopes = scopes.ToConcatenatedString(
-                scope => scope.ToStringScope(),
+                scope => scope,
                 " ");
 
             SignedInAs.Text = "Not signed in";

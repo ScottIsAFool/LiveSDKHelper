@@ -60,29 +60,13 @@ namespace LiveSDKHelper.Test.ExtensionMethodsClass
 			[TestMethod]
 			public void MustReturnSpaceSeparatedValuesFromListOfScopes()
 			{
-				var list = new List<Scope> { Scope.SignIn, Scope.Basic, Scope.SkyDrive };
+				var list = new List<string> { Scope.SignIn, Scope.Basic, Scope.SkyDrive };
 
-				var result = list.ToConcatenatedString(item => item.ToStringScope(), " ");
+				var result = list.ToConcatenatedString(item => item, " ");
 
 				var expected = "wl.signin wl.basic wl.skydrive";
 
 				Assert.AreEqual(expected, result);
-			}
-		}
-
-		[TestClass]
-		public class ToScopeMethodTest
-		{
-			[TestMethod]
-			public void MustReturnStringScope()
-			{
-				var scope = Scope.SkyDriveUpdate;
-
-				var scopeName = scope.ToStringScope();
-
-				var expected = "wl.skydrive_update";
-
-				Assert.AreEqual(expected, scopeName);
 			}
 		}
 	}
